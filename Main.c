@@ -4,7 +4,7 @@
 int main()
 {
 
-    UI(5);
+    UI(7);
 
     return 0;
 }
