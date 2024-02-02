@@ -52,7 +52,7 @@
 //     return entscheidung_spieler_waffe, waffenschaden;
 // }
 
-// Switch f체r die Stats der Gegner, wird pro Gruppe aufgerufen und Gegner werden den Gruppen zugeordnet
+// Switch für die Stats der Gegner, wird pro Gruppe aufgerufen und Gegner werden den Gruppen zugeordnet
 /*
 int entscheidung_gegnerauswahl(int gegnerauswahl)//!!!
 {
@@ -72,21 +72,37 @@ float gegner_schaden_multiplikator;
 
 int SPIELERLEBEN = 100;
 
+void kampfinfo_anzeigen(struct Gegner gegnergruppe[], int groesse)
+{
+    printf("Spielerleben: %d\n", SPIELERLEBEN);
+    printf("Die Gegnergruppe besteht aus:\n");
 
-// Gegner zu Gruppenzuordnung -> direkt Kampf der Liste?
-// struct gegnergruppe;
+    for (int gegner_in_liste = 0; gegner_in_liste < groesse; gegner_in_liste += 1)
+    {
+        printf("%s: ", gegnergruppe[gegner_in_liste].gegner_name);
+        printf("%d hp", gegnergruppe[gegner_in_liste].gegner_leben);
+        printf("%d dmg\n", gegnergruppe[gegner_in_liste].gegner_waffenschaden);
+    }
+}
+
+
+// wie Schleife mit gruppe1_besiegt -> in Funktion
 
 void kampfsystem(struct Gegner gegnergruppe[], int groesse)
 {
-    // erst Spieler angreifen lassen
+    kampfinfo_anzeigen(gegnergruppe, groesse); //nach jeder Runde wieder anzeigen
+    
+    // Spieler Angriff
+
+
     for (int i = 0; i < groesse; i += 1)
     {
 
-        if (strcmp(gegnergruppe[i].gegner_name, gegner1.gegner_name) == 0 || 
-            strcmp(gegnergruppe[i].gegner_name, gegner2.gegner_name) == 0)
+        if (strcmp(gegnergruppe[i].gegner_name, gegner1.gegner_name) == 0 || strcmp(gegnergruppe[i].gegner_name, gegner2.gegner_name) == 0)
         {
+            // starker Kobold, präziser Kobold
             SPIELERLEBEN -= gegnergruppe[i].gegner_waffenschaden;
-            printf("Spielerleben: %d", SPIELERLEBEN);
+            //printf("Spielerleben: %d", SPIELERLEBEN);
         }
         else
         {
@@ -94,27 +110,11 @@ void kampfsystem(struct Gegner gegnergruppe[], int groesse)
             for (int gegner_in_liste = 0; gegner_in_liste < groesse; gegner_in_liste += 1)
             {
                 gegnergruppe[i].gegner_leben += gegner3.gegner_heilung;
+                // wenn Zeit, dann Auswahl zw. Heilung und Schadensmultiplikator
             }
         }
     }
 }
 
-int Gegnerangriffe(int gegnerauswahl)
-{
-    return 0;
-}
 
 // Entscheidung Angriff? (starker und schwacher angriff, je nach Mana-Level?)
-
-// Kampf an sich
-// int kampfsystem()
-// {
-//     // char enemy_name[25] = "Kobold";
-//     // int enemy_health = 100;
-//     //   int kampf_entscheidung = entscheidung_kampf(enemy_name);
-    
-//     printf("Spielerleben: %d", SPIELERLEBEN);
-//     kampfablauf(gegnergruppe1, );
-
-//     return 0;
-// }
