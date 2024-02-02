@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall
-OBJFILES = Main.o UI_System.o controls.o
+OBJFILES = main.o UI_System.o controls.o dorf.o
 PROGRAM = Game
 
 $(PROGRAM): $(OBJFILES)
@@ -11,9 +11,10 @@ $(PROGRAM): $(OBJFILES)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Dependencies
-Main.o: Main.c UI_System.h controls.h
+main.o: main.c UI_System.h controls.h dorf.h
 UI_System.o: UI_System.c UI_System.h
 controls.o: controls.c controls.h
+dorf.o: dorf.h
 
 .PHONY: all clean run
 

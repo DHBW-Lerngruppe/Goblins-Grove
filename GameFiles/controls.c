@@ -8,7 +8,7 @@ int controls()
 {
     int decision = 0;
     int finalDecision = 0;
-    printf("Wähle aus folgenden Optionen aus:\n");
+    printf("\nWähle aus folgenden Optionen aus:\n");
     printf("1 - Reisen\n");
     printf("2 - Inventar öffnen\n");
     scanf("%d", &decision);
