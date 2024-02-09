@@ -5,22 +5,34 @@
 #include "controls.h"
 #include "dorf.h"
 #include "höhle.h"
+#include "menu.h"
 
 int main()
 {
     int endGame = 0;
 
-    
+    // Inventar
     char **inv = malloc(4 * sizeof(char *)); // Array für Zeiger auf Strings
     inv[0] = "Karte";
     inv[1] = "Glücksbringer";
     inv[2] = "Formelsammlung";
     inv[3] = "Erdbeermarmeladenbrot mit Honig";
-
     int inventorySize = 4; // Anfangsgröße des Inventars
 
+    // Start-Menu
     printf("\e[1;1H\e[2J"); // Terminal clearen
+    char start;
+    menu();
+    scanf(" %c", &start);
+    printf("\e[1;1H\e[2J"); // Terminal clearen
+    while (start != 'f')
+    {
+        menu();
+        scanf(" %c", &start);
+        printf("\e[1;1H\e[2J"); // Terminal clearen
+    }
 
+    //Prolog
     printf("Mit einem dumpfen Kopfschmerz erwachst du in einem undurchdringlichen Wald. \n"
            "Deine Erinnerungen sind verschwommen, und die Umgebung ist dir fremd. \n"
            "Ein kalter Wind streicht durch die Bäume, während der Wald in geheimnisvollem Schweigen ruht. \n"
@@ -28,7 +40,6 @@ int main()
            "Dein Abenteuer beginnt zwischen schattigen Baumstämmen und den rätselhaften Geräuschen der Natur. \n"
            "Tauche ein und entdecke die Wahrheit hinter den Schatten des Waldes.\n");
 
-    // UI(10);
     while (endGame == 0)
     {
         int decision = controls();

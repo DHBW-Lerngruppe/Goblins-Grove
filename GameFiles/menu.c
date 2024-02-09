@@ -1,51 +1,51 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <menu.h>
 
-
-int main()
+int menu()
 {
-
+int time = 100000;
 
 printf("\x1b[32m    ▄██████▄   ▄██████▄  ▀█████████▄   ▄█        ▄█  ███▄▄▄▄      ▄████████\x1b[0m      \x1b[31m   ▄██████▄     ▄████████  ▄██████▄   ▄█    █▄     ▄████████   \x1b[0m\n");
-usleep(300000);
+usleep(time);
 printf("\x1b[32m   ███    ███ ███    ███   ███    ███ ███       ███  ███▀▀▀██▄   ███    ███\x1b[0m      \x1b[31m  ███    ███   ███    ███ ███    ███ ███    ███   ███    ███   \x1b[0m\n");
-usleep(300000);
+usleep(time);
 printf("\x1b[32m   ███    █▀  ███    ███   ███    ███ ███       ███▌ ███   ███   ███    █▀ \x1b[0m      \x1b[31m  ███    █▀    ███    ███ ███    ███ ███    ███   ███    █▀    \x1b[0m\n");
-usleep(300000);
+usleep(time);
 printf("\x1b[32m  ▄███        ███    ███  ▄███▄▄▄██▀  ███       ███▌ ███   ███   ███       \x1b[0m      \x1b[31m ▄███         ▄███▄▄▄▄██▀ ███    ███ ███    ███  ▄███▄▄▄       \x1b[0m\n");
-usleep(300000);
+usleep(time);
 printf("\x1b[32m ▀▀███ ████▄  ███    ███ ▀▀███▀▀▀██▄  ███       ███▌ ███   ███ ▀███████████\x1b[0m      \x1b[31m▀▀███ ████▄  ▀▀███▀▀▀▀▀   ███    ███ ███    ███ ▀▀███▀▀▀       \x1b[0m\n");
-usleep(300000);
+usleep(time);
 printf("\x1b[32m   ███    ███ ███    ███   ███    ██▄ ███       ███  ███   ███          ███\x1b[0m      \x1b[31m  ███    ███ ▀███████████ ███    ███ ███    ███   ███    █▄    \x1b[0m\n");
-usleep(300000);
+usleep(time);
 printf("\x1b[32m   ███    ███ ███    ███   ███    ███ ███▌    ▄ ███  ███   ███    ▄█    ███\x1b[0m      \x1b[31m  ███    ███   ███    ███ ███    ███ ███    ███   ███    ███   \x1b[0m\n");
-usleep(300000);
+usleep(time);
 printf("\x1b[32m   ████████▀   ▀██████▀  ▄█████████▀  █████▄▄██ █▀    ▀█   █▀   ▄████████▀ \x1b[0m      \x1b[31m  ████████▀    ███    ███  ▀██████▀   ▀██████▀    ██████████   \x1b[0m\n");
-usleep(300000);
+usleep(time);
 printf("\x1b[32m                                      ▀                                    \x1b[0m      \x1b[31m               ███    ███                                      \x1b[0m\n");
 
 printf("\n");
 
 printf("                                                         • ▌ ▄ ·.  ▄▄▄· ·▄▄▄▄  ▄▄▄ .    ▄▄▄▄·  ▄· ▄▌ \n");
-usleep(200000);
+usleep(time);
 printf("                                                          ·██ ▐███▪▐█ ▀█ ██▪ ██ ▀▄.▀·    ▐█ ▀█▪▐█▪██▌ \n");
-usleep(200000);
+usleep(time);
 printf("                                                          ▐█ ▌▐▌▐█·▄█▀▀█ ▐█· ▐█▌▐▀▀▪▄    ▐█▀▀█▄▐█▌▐█▪ \n");
-usleep(200000);
+usleep(time);
 printf("                                                          ██ ██▌▐█▌▐█ ▪▐▌██. ██ ▐█▄▄▌    ██▄▪▐█ ▐█▀·. \n");
-usleep(200000);
+usleep(time);
 printf("                                                          ▀▀  █▪▀▀▀ ▀  ▀ ▀▀▀▀▀•  ▀▀▀     ·▀▀▀▀   ▀ •  \n");
-usleep(300000);
+usleep(time);
 printf("\n");
 
 
 printf("                                                                Felix, Jannik, Moritz & Tewes\n");
-usleep(200000);
+usleep(time);
 printf("\n");
 printf("\n");
 printf("\n");
 
-usleep(200000);
+usleep(time);
 printf("\x1b[36m                                                              ┏┓        ╹╹┏┓╹╹       ┏┓           \x1b[0m\n");
 printf("\x1b[36m                                                              ┃┃┏┓┏┓┏┏    ┣     ╋┏┓  ┗┓╋┏┓┏┓╋     \x1b[0m\n");
 printf("\x1b[36m                                                              ┣┛┛ ┗ ┛┛    ┻     ┗┗┛  ┗┛┗┗┻┛ ┗     \x1b[0m\n");
