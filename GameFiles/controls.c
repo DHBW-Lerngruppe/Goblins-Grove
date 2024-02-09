@@ -3,15 +3,25 @@
 
 int reisen();
 
-
 int controls()
 {
+    printf("\033[1;94m"); // Helle Blaufarbe
+    printf(" ▄▄▄· ▄ •▄ ▄▄▄▄▄▪         ▐ ▄ ▄▄▄ . ▐ ▄ \n");
+    printf("▐█ ▀█ █▌▄▌▪•██  ██ ▪     •█▌▐█▀▄.▀·•█▌▐█\n");
+    printf("▄█▀▀█ ▐▀▀▄· ▐█.▪▐█· ▄█▀▄ ▐█▐▐▌▐▀▀▪▄▐█▐▐▌\n");
+    printf("▐█ ▪▐▌▐█.█▌ ▐█▌·▐█▌▐█▌.▐▌██▐█▌▐█▄▄▌██▐█▌\n");
+    printf(" ▀  ▀ ·▀  ▀ ▀▀▀ ▀▀▀ ▀█▄▀▪▀▀ █▪ ▀▀▀ ▀▀ █▪\n");
+    // Zurücksetzen auf Standardfarbe
+    printf("\033[0m");
+
+
     int decision = 0;
     int finalDecision = 0;
-    printf("\nWähle aus folgenden Optionen aus:\n");
+    printf("Wähle aus folgenden Aktionen aus:\n");
     printf("1 - Reisen\n");
     printf("2 - Inventar öffnen\n");
     scanf("%d", &decision);
+    printf("\e[1;1H\e[2J"); // Terminal clearen
 
     switch (decision)
     {
@@ -32,11 +42,21 @@ int controls()
 int reisen()
 {
     int decision = 0;
+    printf("\033[1;94m"); // Helle Blaufarbe
 
-    printf("\nWohin möchtest du reisen?\n");
+    // ASCII-Art in Hellblau ausgeben
+    printf("▄▄▄  ▄▄▄ .▪  .▄▄ · ▄▄▄ . ▐ ▄ \n");
+    printf("▀▄ █·▀▄.▀·██ ▐█ ▀. ▀▄.▀·•█▌▐█\n");
+    printf("▐▀▀▄ ▐▀▀▪▄▐█·▄▀▀▀█▄▐▀▀▪▄▐█▐▐▌\n");
+    printf("▐█•█▌▐█▄▄▌▐█▌▐█▄▪▐█▐█▄▄▌██▐█▌\n");
+    printf(".▀  ▀ ▀▀▀ ▀▀▀ ▀▀▀▀  ▀▀▀ ▀▀ █▪\n");
+
+    // Zurücksetzen auf Standardfarbe
+    printf("\033[0m");
+    
+    printf("Wohin möchtest du reisen?\n");
     printf("1 - Dorf\n");
-    printf("2 - Wald\n");
-    printf("3 - Höhle\n");
+    printf("2 - Höhle\n");
 
     scanf("%d", &decision);
 
@@ -44,9 +64,7 @@ int reisen()
     {
     case 1:
         break;
-    case 2: 
-        break;
-    case 3: 
+    case 2:
         break;
     default:
         break;
