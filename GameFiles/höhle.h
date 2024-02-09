@@ -1,0 +1,1 @@
+int höhle(char** inventory, int size, char* item);

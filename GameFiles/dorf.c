@@ -1,5 +1,9 @@
 #include <stdio.h>
 #include "dorf.h"
+#include "inventory.h"
+
+char **inv;
+int inventorySize;
 
 int hütte1();
 int hütte2();
@@ -49,7 +53,7 @@ int dorf()
         hütte3();
         break;
     case 4:
-        hütte4();
+        hütte4(&inv, &inventorySize);
         break;
     case 5:
         hütte5();
@@ -85,14 +89,17 @@ int hütte3()
            "und hörst leises Murmeln von freundlichen Dorfbewohnern.\n");
     return 0;
 }
-int hütte4()
+int hütte4(char ***invPtr, int *inventorySizePtr)
 {
     printf("\e[1;1H\e[2J"); // Terminal clearen
 
     printf("Die felsige Höhlenhütte öffnet sich zu einem gemütlichen Raum, \n"
            "in dem sanftes Licht auf handgearbeitete Steinmöbel fällt, die die Höhlenwände schmücken.\n");
+
+    addItemToInventory(invPtr, inventorySizePtr, "Schlüssel");
     return 0;
 }
+
 int hütte5()
 {
     printf("\e[1;1H\e[2J"); // Terminal clearen
