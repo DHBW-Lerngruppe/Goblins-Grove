@@ -1,1 +1,1 @@
-int höhle(char** inventory, int size, char* item);
+int höhle(char inv[][50]);

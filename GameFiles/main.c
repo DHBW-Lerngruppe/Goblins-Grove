@@ -11,13 +11,7 @@ int main()
 {
     int endGame = 0;
 
-    // Inventar
-    char **inv = malloc(4 * sizeof(char *)); // Array für Zeiger auf Strings
-    inv[0] = "Karte";
-    inv[1] = "Glücksbringer";
-    inv[2] = "Formelsammlung";
-    inv[3] = "Erdbeermarmeladenbrot mit Honig";
-    int inventorySize = 4; // Anfangsgröße des Inventars
+    char inv[10][50] = {"Test", "Test2"};
 
     // Start-Menu
     printf("\e[1;1H\e[2J"); // Terminal clearen
@@ -32,7 +26,7 @@ int main()
         printf("\e[1;1H\e[2J"); // Terminal clearen
     }
 
-    //Prolog
+    // Prolog
     printf("Mit einem dumpfen Kopfschmerz erwachst du in einem undurchdringlichen Wald. \n"
            "Deine Erinnerungen sind verschwommen, und die Umgebung ist dir fremd. \n"
            "Ein kalter Wind streicht durch die Bäume, während der Wald in geheimnisvollem Schweigen ruht. \n"
@@ -43,26 +37,33 @@ int main()
     while (endGame == 0)
     {
         int decision = controls();
+        int decision2 = 0;
         switch (decision)
         {
         case 1:
-            dorf();
+            decision2 = dorf();
+            if (decision2 == 1)
+            {
+                strcpy(inv[3], "Schlüssel");
+            }
             break;
         case 2:
             printf("Du gehst in den Wald\n");
             break;
         case 3:
-            höhle(inv, 5, "Schlüssel");
+            höhle(inv);
             break;
         case 20:
             printf("\nDu öffnest deinen Beutel und siehst folgendes: \n");
-            for (int i = 0; i < inventorySize; i++)
+
+            for (int i = 0; i < 10; i++)
             {
-                if (strlen(inv[i]) > 0)
-                { // Überprüfe, ob das Element nicht leer ist
-                    printf("- %s\n", inv[i]);
+                if (strcmp(inv[i], "") != 0)
+                {
+                    printf("%s\n", inv[i]);
                 }
             }
+
             break;
         default:
             printf("Keine gültige Auswahl!\n");

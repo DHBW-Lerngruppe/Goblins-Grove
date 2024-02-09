@@ -1,7 +1,8 @@
 #include <stdio.h>
+#include <string.h>
 #include "höhle.h"
 
-int höhle(char** inventory, int size, char* item)
+int höhle(char inv[][50])
 {
     printf("\e[1;1H\e[2J"); // Terminal clearen
 
@@ -18,8 +19,28 @@ int höhle(char** inventory, int size, char* item)
 
     if (decision == 1)
     {
-        printf("Yes");
+        int foundKey = 0;
+        for (int i = 0; i < 10; i++)
+        {
+            if (strcmp(inv[i], "Schlüssel") == 0)
+            {
+                foundKey = 1;
+                break; // Stoppe die Schleife, sobald der Schlüssel gefunden wurde
+            }
+        }
+
+        if (foundKey)
+        {
+            printf("Du öffnest die Türe\n");
+        }
+        else
+        {
+            printf("Du hast keinen geeigneten Schlüssel! \n");
+        }
     }
-    
+    else{
+        printf("Du verlässt die Höhle\n");
+    }
+
     return 0;
 }
