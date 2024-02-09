@@ -13,4 +13,4 @@ struct Waffe waffe2 = {
     50,
     };
 
-
+struct Waffe waffe1, waffe2;

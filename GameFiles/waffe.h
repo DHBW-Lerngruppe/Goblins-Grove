@@ -1,3 +1,4 @@
+// In "waffe.h"
 #ifndef WAFFE_H
 #define WAFFE_H
 
