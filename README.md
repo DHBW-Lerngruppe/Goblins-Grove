@@ -67,16 +67,16 @@ Das Ziel ist die Entwicklung eines textbasierten Adventure-Spiels, das den Spiel
   };
 
 ### 4. Hauptfunktionen
-void kampfinfo_anzeigen(struct Gegner[], int): Zeigt Lebenspunkte und Gegnerdetails.
-void kampfsystem(struct Gegner[], int): Kampflogik und -mechanismen.
+- void kampfinfo_anzeigen(struct Gegner[], int): Zeigt Lebenspunkte und Gegnerdetails.
+- void kampfsystem(struct Gegner[], int): Kampflogik und -mechanismen.
 
 ### 5. Spiellogik
-Kampfsystem: Rundenbasierter Kampf mit Anzeigen von Spieler- und Gegnerstatus.
-Gegnerverhalten: Unterscheidung zwischen Angriff und Heilung basierend auf Gegnertyp.
+- Kampfsystem: Rundenbasierter Kampf mit Anzeigen von Spieler- und Gegnerstatus.
+- Gegnerverhalten: Unterscheidung zwischen Angriff und Heilung basierend auf Gegnertyp.
 
 ### 6. Entwicklungshinweise
-Modularität: Funktionen sind modular aufgebaut für einfache Anpassungen.
-Zufälligkeitsinitialisierung: srand(time(NULL)) zu Beginn für effektive Zufälligkeit.
+- Modularität: Funktionen sind modular aufgebaut für einfache Anpassungen.
+- Zufälligkeitsinitialisierung: srand(time(NULL)) zu Beginn für effektive Zufälligkeit.
 
 # Anwenderdokumentation für das Textbasierte Adventure-Spiel
 
