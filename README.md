@@ -40,7 +40,7 @@ Das Ziel ist die Entwicklung eines textbasierten Adventure-Spiels, das den Spiel
 # Entwicklerdokumentation
 
 ## 1. Systemanforderungen
-- C Compiler (z.B. GCC)
+- C Compiler (GCC)
 - Standardbibliotheken: `<stdio.h>`, `<string.h>`, `<stdlib.h>`, `<time.h>`
 
 ## 2. Spielkomponenten
@@ -55,6 +55,15 @@ Das Ziel ist die Entwicklung eines textbasierten Adventure-Spiels, das den Spiel
       int gegner_waffenschaden;
       int gegner_heilung;
       float gegner_schaden_multiplikator;
+  };
+
+  - `struct Waffe`: Definiert Eigenschaften der Waffen.
+
+  ```c
+  struct Waffen {
+      	xd;
+  	xd;
+  	xd;
   };
 
 ### 4. Hauptfunktionen
