@@ -7,7 +7,7 @@ struct Waffe waffe1 = {
     5,
     };
 
-struct Waffe waffe1 = {
+struct Waffe waffe2 = {
     "Bogen",
     30,
     50,
