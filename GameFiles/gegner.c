@@ -24,14 +24,15 @@ struct Gegner gegner3 =
         75,
         0,
         25,
-        1.20};
+        0.20};
 
-struct Gegner gegnergruppe1[2];
+struct Gegner gegnergruppe1[3];
 
 int initializeGegnergruppe1()
 {
     gegnergruppe1[0] = gegner1;
     gegnergruppe1[1] = gegner2;
+    gegnergruppe1[2] = gegner3;
     int groesse = sizeof(gegnergruppe1) / sizeof(gegnergruppe1[0]);
     return groesse;
 }

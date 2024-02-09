@@ -13,7 +13,7 @@ struct Gegner
 };
 
 extern struct Gegner gegner1, gegner2, gegner3;
-extern struct Gegner gegnergruppe1[2];
+extern struct Gegner gegnergruppe1[3];
 
 int initializeGegnergruppe1();
 
