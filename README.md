@@ -69,3 +69,39 @@ Gegnerverhalten: Unterscheidung zwischen Angriff und Heilung basierend auf Gegne
 Modularität: Funktionen sind modular aufgebaut für einfache Anpassungen.
 Zufälligkeitsinitialisierung: srand(time(NULL)) zu Beginn für effektive Zufälligkeit.
 
+# Anwenderdokumentation für das Textbasierte Adventure-Spiel
+
+Willkommen zum Goblin Grove! Diese Dokumentation führt Sie durch die Grundlagen der Spielmechanik und wie Sie das Spiel spielen können.
+
+## Spielstart
+
+Das Spiel beginnt mit einer Einführung in die Welt und Ihre Rolle als Spieler. Ihr Ziel ist es, alle Gegner zu besiegen.
+
+## Steuerung
+
+Die Steuerung des Spiels erfolgt über Texteingaben. Folgende Befehle stehen Ihnen zur Verfügung:
+
+Angriff:
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+
+Auswahl der Waffe:
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+
+Gegnergruppierungen:
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+
+## Kampfsystem
+
+- Jeder Kampf wird rundenbasiert ausgeführt. In jeder Runde können Sie entscheiden, ob Sie angreifen, heilen oder eine spezielle Aktion durchführen möchten.
+- Gegner haben verschiedene Stärken und Schwächen, die Sie herausfinden und zu Ihrem Vorteil nutzen müssen.
+
+## Gegner
+
+Gegner im Spiel variieren in ihren Fähigkeiten und Angriffsmustern. Einige können sich heilen, während andere stärkere Angriffe ausführen können.
+
+## Heilung und Schaden
+
+- Ihr Charakter und Gegner haben eine bestimmte Anzahl an Lebenspunkten. Wenn diese auf 0 fallen, gilt der Charakter bzw. der Gegner als besiegt.
+- Heilung und Schaden werden durch die Spielmechanik und bestimmte Aktionen im Spiel beeinflusst.
+
+
