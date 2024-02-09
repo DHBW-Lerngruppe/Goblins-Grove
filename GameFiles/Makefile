@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall
-OBJFILES = main.o UI_System.o controls.o dorf.o höhle.o gameScreens.o gegner.o waffe.o
+OBJFILES = main.o UI_System.o controls.o dorf.o höhle.o gameScreens.o gegner.o waffe.o kampfsystem.o
 PROGRAM = Game
 
 $(PROGRAM): $(OBJFILES)

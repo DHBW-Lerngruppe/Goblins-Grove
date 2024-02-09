@@ -7,6 +7,8 @@
 #include "dorf.h"
 #include "höhle.h"
 #include "gameScreens.h"
+#include "gegner.h"
+#include "kampfsystem.h"
 
 int main()
 {
@@ -51,6 +53,7 @@ int main()
         switch (decision)
         {
         case 1:
+            kampfsystem(gegnergruppe1, initializeGegnergruppe1());
             decision2 = dorf();
             if (decision2 == 1)
             {
