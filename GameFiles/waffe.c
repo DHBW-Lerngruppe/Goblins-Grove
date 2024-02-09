@@ -3,7 +3,7 @@
 
 struct Waffe waffe1 = {
     "Schwert",
-    30,
+    3000,
     5,
     };
 

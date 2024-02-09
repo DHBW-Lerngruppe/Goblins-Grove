@@ -2,7 +2,7 @@
 #include "gegner.h"
 
 struct Gegner gegner1 = {
-    "starker Kobold",
+    "Starker Kobold",
     5,
     175,
     40,
@@ -10,7 +10,7 @@ struct Gegner gegner1 = {
     0};
 
 struct Gegner gegner2 = {
-    "praeziser Kobold",
+    "Präziser Kobold",
     15,
     100,
     30,
@@ -19,7 +19,7 @@ struct Gegner gegner2 = {
 
 struct Gegner gegner3 =
     {
-        "unterstützender Kobold",
+        "Unterstützender Kobold",
         10,
         75,
         0,
