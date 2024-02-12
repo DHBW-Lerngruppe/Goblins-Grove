@@ -3,13 +3,13 @@
 
 struct Waffe waffe1 = {
     "Schwert",
-    3000,
+    20,
     5,
     };
 
 struct Waffe waffe2 = {
     "Bogen",
-    30,
+    15,
     50,
     };
 

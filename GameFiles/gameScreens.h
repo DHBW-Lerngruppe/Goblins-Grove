@@ -1,3 +1,3 @@
 int menu();
 int gameover();
-int endGame();
+int endScreen();

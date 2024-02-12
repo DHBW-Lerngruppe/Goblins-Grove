@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "controls.h"
+#include "gameScreens.h"
 
 int reisen();
 
@@ -13,7 +14,6 @@ int controls()
     printf(" ▀  ▀ ·▀  ▀ ▀▀▀ ▀▀▀ ▀█▄▀▪▀▀ █▪ ▀▀▀ ▀▀ █▪\n");
     // Zurücksetzen auf Standardfarbe
     printf("\033[0m");
-
 
     int decision = 0;
     int finalDecision = 0;
@@ -31,11 +31,13 @@ int controls()
     case 2:
         finalDecision = 20;
         break;
-
+    case 6942069:
+        finalDecision = 6942069;
+        endScreen();
+        break;
     default:
         break;
     }
-
     return finalDecision;
 }
 
@@ -53,7 +55,7 @@ int reisen()
 
     // Zurücksetzen auf Standardfarbe
     printf("\033[0m");
-    
+
     printf("Wohin möchtest du reisen?\n");
     printf("1 - Dorf\n");
     printf("2 - Höhle\n");

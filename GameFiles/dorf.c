@@ -3,6 +3,8 @@
 #include <string.h>
 #include "dorf.h"
 
+#define TIME 20000
+
 int hütte1();
 int hütte2();
 int hütte3();
@@ -11,7 +13,6 @@ int hütte5();
 
 int dorf()
 {
-    int time = 0;
     printf("\e[1;1H\e[2J"); // Terminal clearen
 
     printf("\033[1;94m"); // Helle Blaufarbe
@@ -36,7 +37,7 @@ int dorf()
     {
         putchar(text[i]);
         fflush(stdout); // Stellt sicher, dass der Ausgabepuffer sofort geleert wird
-        usleep(time);   // Verzögerung von 100 Millisekunden zwischen jedem Zeichen
+        usleep(TIME);   // Verzögerung von 100 Millisekunden zwischen jedem Zeichen
     }
 
     int leaveVillage = 0;
@@ -52,7 +53,7 @@ int dorf()
         // Zurücksetzen auf Standardfarbe
         printf("\033[0m");
 
-        printf("Was möchtest du tun? \n");
+        printf("Wohin möchtest du gehen? \n\n");
         printf(
             "1 - Geduckte Strohhütte:\n"
             "\tVersteckt im Grünen.\n\n"
@@ -93,6 +94,7 @@ int dorf()
             break;
         case 6:
             leaveVillage = 1;
+            printf("\e[1;1H\e[2J"); // Terminal clearen
             break;
         default:
             printf("Keine gültige Auswahl");
@@ -130,6 +132,8 @@ int hütte2()
 
     printf("Beim Betreten der lehmigen Blockhütte empfängt dich der beruhigende Duft von Kräutern, \n"
            "die an den Wänden zum Trocknen hängen.\n");
+    printf("─────────────────────────────────────────────\n");
+
     return 0;
 }
 int hütte3()
@@ -143,6 +147,8 @@ int hütte3()
 
     printf("In der reetgedeckten Holzhütte spürst du die Gemütlichkeit eines knisternden Feuers \n"
            "und hörst leises Murmeln von freundlichen Dorfbewohnern.\n");
+    printf("─────────────────────────────────────────────\n");
+
     return 0;
 }
 int hütte4()
@@ -155,8 +161,9 @@ int hütte4()
     printf("\033[0m");
 
     printf("Die felsige Höhlenhütte öffnet sich zu einem gemütlichen Raum, \n"
-           "in dem sanftes Licht auf handgearbeitete Steinmöbel fällt, die die Höhlenwände schmücken.\n");
-    printf("Ein Schlüssel wurde dem Inventar hinzugefügt.\n");
+           "in dem sanftes Licht auf handgearbeitete Steinmöbel fällt, die die Höhlenwände schmücken.\n\n");
+    printf("Ein \033[1;32mSchlüssel\033[0m wurde dem Inventar hinzugefügt.\n\n");
+    printf("─────────────────────────────────────────────\n");
 
     return 1;
 }
@@ -166,11 +173,13 @@ int hütte5()
     printf("\e[1;1H\e[2J"); // Terminal clearen
     printf("\033[1;95m");   // Helle Magentafarbe
     printf("┏┓ ┓    •   ┓    •           ┓┏••     \n");
-    printf("┗┓┏┣┓┏┳┓┓┏┓┏┫┏┓┏┓┓┏┏┓┏┓┏┓  ┣┫┓┏╋╋┏┓\n");
+    printf("┗┓┏┣┓┏┳┓┓┏┓┏┫┏┓┏┓┓┏┏┓┏┓┏┓┏┓  ┣┫┓┏╋╋┏┓\n");
     printf("┗┛┗┛┗┛┗┗┗┗ ┗┻┗ ┗ ┗┛┗ ┛ ┛┗┗   ┛┗┗┻┗┗┗\n");
     printf("\033[0m");
 
     printf("Beim Eintritt in die schmiedeeiserne Hütte begrüßen dich das rhythmische Hämmern \n"
            "und das Glühen der Schmiede, wo der Dorfschmied geschäftig arbeitet.\n");
+    printf("─────────────────────────────────────────────\n");
+
     return 0;
 }

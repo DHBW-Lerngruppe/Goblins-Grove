@@ -5,16 +5,17 @@
 #include "UI_System.h"
 #include "controls.h"
 #include "dorf.h"
-#include "höhle.h"
+#include "hoehle.h"
 #include "gameScreens.h"
 #include "gegner.h"
 #include "kampfsystem.h"
 
+#define TIME 20000
+
 int main()
 {
     int endGame = 0;
-    int time = 0;
-    char inv[10][50] = {"Karte", "Glücksbringer", "Formelsammlung für lineare Algebra", "Erdbeermarmeladenbrot mit Honig"};
+    char inv[10][50] = {"Karte", "Glücksbringer", "Formelsammlung für lineare Algebra", "Halbes Erdbeermarmeladenbrot mit Honig", "Schwert", "Bogen"};
 
     // Start-Menu
     printf("\e[1;1H\e[2J"); // Terminal clearen
@@ -41,27 +42,41 @@ int main()
     {
         putchar(text[i]);
         fflush(stdout); // Stellt sicher, dass der Ausgabepuffer sofort geleert wird
-        usleep(time); // Verzögerung von 100 Millisekunden zwischen jedem Zeichen
+        usleep(TIME);   // Verzögerung von 100 Millisekunden zwischen jedem Zeichen
     }
 
     printf("─────────────────────────────────────────────\n");
-
+    int kampfStatus = 0;
     while (endGame == 0)
     {
         int decision = controls();
         int decision2 = 0;
+
         switch (decision)
         {
         case 1:
-            kampfsystem(gegnergruppe1, initializeGegnergruppe1());
-            decision2 = dorf();
-            if (decision2 == 1)
+            if (kampfStatus == 0)
             {
-                strcpy(inv[4], "Schlüssel");
+                printf("\e[1;1H\e[2J"); // Terminal clearen
+                kampfStatus = kampfsystem(gegnergruppe1, initializeGegnergruppe1());
+            }
+            if (kampfStatus == 1)
+            {
+                decision2 = dorf();
+                if (decision2 == 1)
+                {
+                    strcpy(inv[6], "Schlüssel");
+                }
+            }
+            if (kampfStatus == 2)
+            {
+                gameover();
+                endGame = 1;
+                break;
             }
             break;
         case 2:
-            höhle(inv);
+            endGame = hoehle(inv);
             break;
         case 20:
 
@@ -90,6 +105,9 @@ int main()
                 }
             }
             printf("\n─────────────────────────────────────────────\n");
+            break;
+        case 6942069:
+            endGame = 1;
             break;
         default:
             printf("Keine gültige Auswahl!\n");

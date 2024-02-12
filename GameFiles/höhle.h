@@ -1,1 +1,0 @@
-int höhle(char inv[][50]);

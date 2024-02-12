@@ -1,1 +1,1 @@
-void kampfsystem();
+int kampfsystem();

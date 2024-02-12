@@ -4,16 +4,16 @@
 struct Gegner gegner1 = {
     "Starker Kobold",
     5,
-    175,
-    40,
+    60,
+    10,
     0,
     0};
 
 struct Gegner gegner2 = {
     "Präziser Kobold",
     15,
-    100,
     30,
+    15,
     0,
     0};
 
@@ -21,9 +21,9 @@ struct Gegner gegner3 =
     {
         "Unterstützender Kobold",
         10,
-        75,
+        30,
         0,
-        25,
+        5,
         0.20};
 
 struct Gegner gegnergruppe1[3];
