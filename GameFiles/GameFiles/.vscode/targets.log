@@ -1,0 +1,9 @@
+make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --question
+"\\wsl.localhost\Ubuntu\home\jannik\GameFiles"
+CMD.EXE wurde mit dem oben angegebenen Pfad als aktuellem Verzeichnis gestartet.
+UNC-Pfade werden nicht unterst�tzt.
+Stattdessen wird das Windows-Verzeichnis als aktuelles Verzeichnis gesetzt.
+
+Der Befehl "make.exe" ist entweder falsch geschrieben oder
+konnte nicht gefunden werden.
+
