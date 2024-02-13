@@ -1,4 +1,6 @@
-#include <stdio.h>
+// NICHT VERWENDET - ZEIT HAT GEFEHLT :(
+    
+/*#include <stdio.h>
 #include "UI_System.h"
 
 #define MAXHEALTH 10
@@ -24,3 +26,4 @@ int UI(int health)
     return 0;
     
     }
+*/

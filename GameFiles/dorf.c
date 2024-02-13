@@ -15,17 +15,15 @@ int dorf()
 {
     printf("\e[1;1H\e[2J"); // Terminal clearen
 
-    printf("\033[1;94m"); // Helle Blaufarbe
+    printf("\033[1;94m"); // Hellblau
 
-    // ASCII-Art in Hellblau ausgeben
     printf("·▄▄▄▄        ▄▄▄  ·▄▄▄\n");
     printf("██▪ ██ ▪     ▀▄ █·▐▄▄·\n");
     printf("▐█· ▐█▌ ▄█▀▄ ▐▀▀▄ ██▪ \n");
     printf("██. ██ ▐█▌.▐▌▐█•█▌██▌.\n");
     printf("▀▀▀▀▀•  ▀█▄▀▪.▀  ▀▀▀▀ \n");
 
-    // Zurücksetzen auf Standardfarbe
-    printf("\033[0m");
+    printf("\033[0m"); // Standardfarbe
 
     char text[] = "Willkommen im Dorf Finstergrund! \n\n"
                   "Du stehst am Rand eines kleinen Dorfes, umgeben von dichten Bäumen. \n"
@@ -36,22 +34,23 @@ int dorf()
     for (int i = 0; i < strlen(text); i++)
     {
         putchar(text[i]);
-        fflush(stdout); // Stellt sicher, dass der Ausgabepuffer sofort geleert wird
-        usleep(TIME);   // Verzögerung von 100 Millisekunden zwischen jedem Zeichen
+        fflush(stdout); // Ausgabepuffer wird direkt geleert
+        usleep(TIME);   // Verzögerungseffekt beim Tippen (100ms)
     }
 
     int leaveVillage = 0;
     int decision2 = 0;
     while (leaveVillage == 0)
     {
-        printf("\033[1;94m"); // Helle Blaufarbe
+        printf("\033[1;94m"); // Hellblau
+
         printf(" ▄▄▄· ▄ •▄ ▄▄▄▄▄▪         ▐ ▄ ▄▄▄ . ▐ ▄ \n");
         printf("▐█ ▀█ █▌▄▌▪•██  ██ ▪     •█▌▐█▀▄.▀·•█▌▐█\n");
         printf("▄█▀▀█ ▐▀▀▄· ▐█.▪▐█· ▄█▀▄ ▐█▐▐▌▐▀▀▪▄▐█▐▐▌\n");
         printf("▐█ ▪▐▌▐█.█▌ ▐█▌·▐█▌▐█▌.▐▌██▐█▌▐█▄▄▌██▐█▌\n");
         printf(" ▀  ▀ ·▀  ▀ ▀▀▀ ▀▀▀ ▀█▄▀▪▀▀ █▪ ▀▀▀ ▀▀ █▪\n");
-        // Zurücksetzen auf Standardfarbe
-        printf("\033[0m");
+
+        printf("\033[0m"); // Standardfarbe
 
         printf("Wohin möchtest du gehen? \n\n");
         printf(
@@ -75,6 +74,7 @@ int dorf()
         int decision = 0;
         scanf("%d", &decision);
 
+        // Auswahl Hütte im Dorf
         switch (decision)
         {
         case 1:
@@ -108,12 +108,12 @@ int hütte1()
     printf("\e[1;1H\e[2J"); // Terminal clearen
 
     printf("\033[1;95m"); // Helle Magentafarbe
-    // ASCII-Kunsttext in Hellblau ausgeben
+
     printf("┏┓     ┓ ┓ ••    \n");
     printf("┗┓╋┏┓┏┓┣┓┣┓┓┏╋╋┏┓\n");
     printf("┗┛┗┛ ┗┛┛┗┛┗┗┻┗┗┗ \n");
-    // Zurücksetzen auf Standardfarbe
-    printf("\033[0m");
+  
+    printf("\033[0m"); // Standardfarbe
 
     printf("Du betrittst die geduckte Strohhütte, in der warme Sonnenstrahlen durch die Fenster fallen \n"
            "und auf rustikale Möbel treffen.\n");
@@ -124,11 +124,14 @@ int hütte1()
 int hütte2()
 {
     printf("\e[1;1H\e[2J"); // Terminal clearen
-    printf("\033[1;95m");   // Helle Magentafarbe
+
+    printf("\033[1;95m");   // Magenta
+
     printf("┳┓┓   ┓ ┓ ••                         \n");
     printf("┣┫┃┏┓┏┃┏┣┓┓┏╋╋┏┓                     \n");
     printf("┻┛┗┗┛┗┛┗┛┗┗┻┗┗┗                      \n");
-    printf("\033[0m");
+
+    printf("\033[0m"); // Standardfarbe
 
     printf("Beim Betreten der lehmigen Blockhütte empfängt dich der beruhigende Duft von Kräutern, \n"
            "die an den Wänden zum Trocknen hängen.\n");
@@ -139,11 +142,14 @@ int hütte2()
 int hütte3()
 {
     printf("\e[1;1H\e[2J"); // Terminal clearen
-    printf("\033[1;95m");   // Helle Magentafarbe
+
+    printf("\033[1;95m");   // Magenta
+
     printf("┓┏  ┓ ┓ ••                            \n");
     printf("┣┫┏┓┃┓┣┓┓┏╋╋┏┓                        \n");
     printf("┛┗┗┛┗┗┛┗┗┻┗┗┗                         \n");
-    printf("\033[0m");
+
+    printf("\033[0m"); // Standardfarbe
 
     printf("In der reetgedeckten Holzhütte spürst du die Gemütlichkeit eines knisternden Feuers \n"
            "und hörst leises Murmeln von freundlichen Dorfbewohnern.\n");
@@ -154,11 +160,14 @@ int hütte3()
 int hütte4()
 {
     printf("\e[1;1H\e[2J"); // Terminal clearen
-    printf("\033[1;95m");   // Helle Magentafarbe
+
+    printf("\033[1;95m");   // Magenta
+
     printf("┓┏••┓ ┓    ┓ ••                       \n");
     printf("┣┫┏┓┣┓┃┏┓┏┓┣┓┓┏╋╋┏┓                   \n");
     printf("┛┗┗┛┛┗┗┗ ┛┗┛┗┗┻┗┗┗                    \n");
-    printf("\033[0m");
+
+    printf("\033[0m"); // Standardfarbe
 
     printf("Die felsige Höhlenhütte öffnet sich zu einem gemütlichen Raum, \n"
            "in dem sanftes Licht auf handgearbeitete Steinmöbel fällt, die die Höhlenwände schmücken.\n\n");
@@ -171,11 +180,14 @@ int hütte4()
 int hütte5()
 {
     printf("\e[1;1H\e[2J"); // Terminal clearen
-    printf("\033[1;95m");   // Helle Magentafarbe
+
+    printf("\033[1;95m");   // Magenta
+
     printf("┏┓ ┓    •   ┓    •           ┓┏••     \n");
     printf("┗┓┏┣┓┏┳┓┓┏┓┏┫┏┓┏┓┓┏┏┓┏┓┏┓┏┓  ┣┫┓┏╋╋┏┓\n");
     printf("┗┛┗┛┗┛┗┗┗┗ ┗┻┗ ┗ ┗┛┗ ┛ ┛┗┗   ┛┗┗┻┗┗┗\n");
-    printf("\033[0m");
+
+    printf("\033[0m"); // Standardfarbe
 
     printf("Beim Eintritt in die schmiedeeiserne Hütte begrüßen dich das rhythmische Hämmern \n"
            "und das Glühen der Schmiede, wo der Dorfschmied geschäftig arbeitet.\n");

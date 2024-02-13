@@ -1,14 +1,13 @@
-// In "gegner.c"
 #include "gegner.h"
 
 struct Gegner gegner1 =
     {
         "Starker Kobold",
-        5,
-        60,
-        10,
-        0,
-        0};
+        5,      // Entfernung
+        60,     // Leben
+        10,     // Schaden
+        0,      // Heilung
+        0};     // Schadensmultiplikation
 
 struct Gegner gegner2 =
     {
@@ -31,6 +30,7 @@ struct Gegner gegner3 =
 struct Gegner gegnergruppe1[3];
 struct Gegner gegnergruppe2[4];
 
+// Gegnergruppe 1 erstellen und Gegnerarten hinzufügen
 int initializeGegnergruppe1()
 {
     gegnergruppe1[0] = gegner1;
@@ -39,6 +39,8 @@ int initializeGegnergruppe1()
     int groesse = sizeof(gegnergruppe1) / sizeof(gegnergruppe1[0]);
     return groesse;
 }
+
+// Gegnergruppe 2 erstellen und Gegnerarten hinzufügen
 int initializeGegnergruppe2()
 {
     gegnergruppe2[0] = gegner2;

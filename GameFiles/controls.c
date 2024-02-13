@@ -12,29 +12,35 @@ int controls()
     printf("▄█▀▀█ ▐▀▀▄· ▐█.▪▐█· ▄█▀▄ ▐█▐▐▌▐▀▀▪▄▐█▐▐▌\n");
     printf("▐█ ▪▐▌▐█.█▌ ▐█▌·▐█▌▐█▌.▐▌██▐█▌▐█▄▄▌██▐█▌\n");
     printf(" ▀  ▀ ·▀  ▀ ▀▀▀ ▀▀▀ ▀█▄▀▪▀▀ █▪ ▀▀▀ ▀▀ █▪\n");
-    // Zurücksetzen auf Standardfarbe
-    printf("\033[0m");
+    printf("\033[0m"); // Zurücksetzen auf Standardfarbe
 
     int decision = 0;
     int finalDecision = 0;
+
     printf("Wähle aus folgenden Aktionen aus:\n");
     printf("1 - Reisen\n");
     printf("2 - Inventar öffnen\n");
-    scanf("%d", &decision);
-    printf("\e[1;1H\e[2J"); // Terminal clearen!!!!!!!!!
 
+    scanf("%d", &decision);
+    printf("\e[1;1H\e[2J"); // wichtig um das Terminal zu clearen
+
+    //Auswahlmenü ob Reise oder Invetar geöffnet wird
+    //Cheatcode: 6942069
     switch (decision)
     {
     case 1:
         finalDecision = reisen();
         break;
+
     case 2:
         finalDecision = 20;
         break;
+
     case 6942069:
         finalDecision = 6942069;
         endScreen();
         break;
+
     default:
         break;
     }
@@ -62,14 +68,5 @@ int reisen()
 
     scanf("%d", &decision);
 
-    switch (decision)
-    {
-    case 1:
-        break;
-    case 2:
-        break;
-    default:
-        break;
-    }
     return decision;
 }

@@ -19,19 +19,24 @@ int kampfsystem(struct Gegner gegnergruppe[], int groesse)
 
     while (spieler_tot == false && gegnergruppe_tot == false)
     {
-        printf("\033[0;31m"); // Setze die Farbe auf Rot
+        printf("\033[0;31m"); // Rot
+
         printf("▄ •▄  ▄▄▄· • ▌ ▄ ·.  ▄▄▄··▄▄▄\n");
         printf("█▌▄▌▪▐█ ▀█ ·██ ▐███▪▐█ ▄█▐▄▄·\n");
         printf("▐▀▀▄·▄█▀▀█ ▐█ ▌▐▌▐█· ██▀·██▪\n");
         printf("▐█.█▌▐█ ▪▐▌██ ██▌▐█▌▐█▪·•██▌.\n");
         printf("·▀  ▀ ▀  ▀ ▀▀  █▪▀▀▀.▀   ▀▀▀\n\n\n");
-        printf("\033[0m"); // Zurücksetzen auf Standardfarben
-        // Spieler Angriff
+
+        printf("\033[0m"); // Standardfarben
+
+
+    // **Spieler Angriff**
 
         printf("Spielerleben: \033[1;31m%d\n\n\033[0m", SPIELERLEBEN);
 
         // Auswahl Gegner
         printf("Welchen Gegner willst du angreifen?\n");
+
         for (int gegner_in_liste = 1; gegner_in_liste <= groesse; gegner_in_liste += 1)
         {
             printf("Drücke %d für \033[1;32m%s \033[0mmit ", gegner_in_liste, gegnergruppe[gegner_in_liste - 1].gegner_name);
@@ -42,12 +47,15 @@ int kampfsystem(struct Gegner gegnergruppe[], int groesse)
 
         int entscheidung_gegner;
         scanf("%d", &entscheidung_gegner);
+
         while (entscheidung_gegner > groesse)
         {
             printf("Bitte gültige Zahl eingeben!\n");
             scanf("%d", &entscheidung_gegner);
         }
+
         printf("\n");
+
         // Auswahl Waffe
         printf("Welche Waffe willst du auswählen?\n");
         printf("Drücke 1 für \033[1;32m%s\033[0m mit \033[1;33m%dm\033[0m Reichweite und \033[1;34m%d Schaden\033[0m.\n", waffe1.waffe_name, waffe1.waffe_reichweite, waffe1.waffe_schaden);
@@ -55,11 +63,13 @@ int kampfsystem(struct Gegner gegnergruppe[], int groesse)
 
         int entscheidung_waffe;
         scanf("%d", &entscheidung_waffe);
+
         while (entscheidung_waffe > 2 || entscheidung_waffe <= 0)
         {
             printf("Bitte gültige Zahl eingeben!\n");
             scanf("%d", &entscheidung_waffe);
         }
+
         // Schwert
         if (entscheidung_waffe == 1)
         {
@@ -73,6 +83,7 @@ int kampfsystem(struct Gegner gegnergruppe[], int groesse)
                 printf("\n\033[1;33mDa der Gegner zu weit entfernt ist, hast du vorbei geschlagen.\n\033[0m");
             }
         }
+
         // Bogen
         if (entscheidung_waffe == 2)
         {
@@ -86,6 +97,7 @@ int kampfsystem(struct Gegner gegnergruppe[], int groesse)
                 printf("\n\033[1;33mDa der Gegner zu weit entfernt ist, hast du vorbei geschossen.\n\033[0m");
             }
         }
+
         // Gegner Tod
         if (gegnergruppe[entscheidung_gegner - 1].gegner_leben <= 0)
         {
@@ -175,9 +187,10 @@ int kampfsystem(struct Gegner gegnergruppe[], int groesse)
 
         char leertaste;
         printf("Drücke Leertaste und dann Enter zum weitermachen\n");
+
         while ((leertaste = getchar()) != ' ')
         {
-            // Warte auf Eingabe...
+          // Warte auf Eingabe! (keine unnötige While-Schleife ^^)
         }
         printf("\e[1;1H\e[2J"); // Terminal clearen
     }

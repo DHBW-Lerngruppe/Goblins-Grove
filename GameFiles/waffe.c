@@ -1,10 +1,9 @@
-// In "waffe.c"
 #include "waffe.h"
 
 struct Waffe waffe1 = {
     "Schwert",
-    20,
-    5,
+    20,     // Schaden
+    5,      // Reichweite
     };
 
 struct Waffe waffe2 = {

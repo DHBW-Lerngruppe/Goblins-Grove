@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -g -no-pie
-OBJFILES = main.o UI_System.o controls.o dorf.o hoehle.o gameScreens.o gegner.o waffe.o kampfsystem.o
+OBJFILES = main.o controls.o dorf.o hoehle.o gameScreens.o gegner.o waffe.o kampfsystem.o
 PROGRAM = Game
 
 $(PROGRAM): $(OBJFILES)
@@ -11,8 +11,7 @@ $(PROGRAM): $(OBJFILES)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Dependencies
-main.o: main.c UI_System.h controls.h dorf.h hoehle.h gameScreens.h kampfsystem.h gegner.h
-UI_System.o: UI_System.c UI_System.h
+main.o: main.c controls.h dorf.h hoehle.h gameScreens.h kampfsystem.h gegner.h
 controls.o: controls.c controls.h
 dorf.o: dorf.c dorf.h
 hoehle.o: hoehle.c hoehle.h

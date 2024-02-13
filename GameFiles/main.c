@@ -15,22 +15,26 @@
 int main()
 {
     int endGame = 0;
-    char inv[10][50] = {"Karte", "Glücksbringer", "Formelsammlung für lineare Algebra", "Halbes Erdbeermarmeladenbrot mit Honig", "Schwert", "Bogen"};
+    char inv[10][50] = {"Karte", "Glücksbringer", "Spickzettel für lineare Algebra", "Halbes Erdbeermarmeladenbrot mit Honig", "Schwert", "Bogen"};
 
     // Start-Menu
     printf("\e[1;1H\e[2J"); // Terminal clearen
+
     char start;
     menu();
     scanf(" %c", &start);
+
     printf("\e[1;1H\e[2J"); // Terminal clearen
+
     while (start != 'f')
     {
         menu();
         scanf(" %c", &start);
+
         printf("\e[1;1H\e[2J"); // Terminal clearen
     }
 
-    // Prolog
+    // Prolog... SWI Prolog? o.O
     char text[] = "Mit einem dumpfen Kopfschmerz erwachst du in einem undurchdringlichen Wald. \n"
                   "Deine Erinnerungen sind verschwommen, und die Umgebung ist dir fremd. \n"
                   "Ein kalter Wind streicht durch die Bäume, während der Wald in geheimnisvollem Schweigen ruht. \n"
@@ -41,8 +45,8 @@ int main()
     for (int i = 0; i < strlen(text); i++)
     {
         putchar(text[i]);
-        fflush(stdout); // Stellt sicher, dass der Ausgabepuffer sofort geleert wird
-        usleep(TIME);   // Verzögerung von 100 Millisekunden zwischen jedem Zeichen
+        fflush(stdout); // Ausgabepuffer direkt reinigen
+        usleep(TIME);   // Verzögerung beim Tippen (100ms)
     }
 
     printf("─────────────────────────────────────────────\n");
@@ -52,6 +56,7 @@ int main()
         int decision = controls();
         int decision2 = 0;
 
+        // Auswahl Reise Inv, Dorf, Höhle oder Cheater -.- ...
         switch (decision)
         {
         case 1:
@@ -60,9 +65,11 @@ int main()
                 printf("\e[1;1H\e[2J"); // Terminal clearen
                 kampfStatus = kampfsystem(gegnergruppe1, initializeGegnergruppe1());
             }
+
             if (kampfStatus == 1)
             {
                 decision2 = dorf();
+
                 if (decision2 == 1)
                 {
                     strcpy(inv[6], "Schlüssel");
@@ -72,27 +79,26 @@ int main()
             {
                 gameover();
                 endGame = 1;
-                break;
             }
             break;
+
         case 2:
             endGame = hoehle(inv);
             break;
+
         case 20:
 
             printf("\e[1;1H\e[2J"); // Terminal clearen
 
-            printf("\033[1;94m"); // Helle Blaufarbe
+            printf("\033[1;94m"); // Hellblau
 
-            // ASCII-Art in Hellblau ausgeben
             printf("▪   ▐ ▄  ▌ ▐·▄▄▄ . ▐ ▄ ▄▄▄▄▄ ▄▄▄· ▄▄▄  \n");
             printf("██ •█▌▐█▪█·█▌▀▄.▀·•█▌▐█•██  ▐█ ▀█ ▀▄ █·\n");
             printf("▐█·▐█▐▐▌▐█▐█•▐▀▀▪▄▐█▐▐▌ ▐█.▪▄█▀▀█ ▐▀▀▄ \n");
             printf("▐█▌██▐█▌ ███ ▐█▄▄▌██▐█▌ ▐█▌·▐█ ▪▐▌▐█•█▌\n");
             printf("▀▀▀▀▀ █▪. ▀   ▀▀▀ ▀▀ █▪ ▀▀▀  ▀  ▀ .▀  ▀\n");
 
-            // Zurücksetzen auf Standardfarbe
-            printf("\033[0m");
+            printf("\033[0m"); // Standardfarbe
 
             usleep(200000);
 
@@ -104,11 +110,14 @@ int main()
                     printf("- %s\n", inv[i]);
                 }
             }
+
             printf("\n─────────────────────────────────────────────\n");
             break;
+
         case 6942069:
             endGame = 1;
             break;
+            
         default:
             printf("Keine gültige Auswahl!\n");
             break;

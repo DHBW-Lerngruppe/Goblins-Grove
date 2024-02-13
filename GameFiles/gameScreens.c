@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
-#include "menu.h"
+#include "gameScreens.h"
 
 #define TIME 200000
 

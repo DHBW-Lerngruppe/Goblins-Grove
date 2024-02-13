@@ -12,11 +12,14 @@ int hoehle(char inv[][50])
 {
 
     printf("\e[1;1H\e[2J"); // Terminal clearen
-    printf("\033[1;95m");   // Helle Magentafarbe
+
+    printf("\033[1;95m");   // Magenta
+
     printf("┓┏••┓ ┓  \n");
     printf("┣┫┏┓┣┓┃┏┓\n");
     printf("┛┗┗┛┛┗┗┗\n");
-    printf("\033[0m");
+
+    printf("\033[0m"); //Standardfarbe
 
     char text[] = "Als du vor der felsigen Höhle stehst und versuchst, sie zu betreten, merkst du, dass sie verschlossen ist. \n"
                   "Ein schwerer Eisengitterriegel verriegelt das Eingangstor und verwehrt dir den Zugang. \n"
@@ -26,18 +29,21 @@ int hoehle(char inv[][50])
     for (int i = 0; i < strlen(text); i++)
     {
         putchar(text[i]);
-        fflush(stdout); // Stellt sicher, dass der Ausgabepuffer sofort geleert wird
-        usleep(TIME);   // Verzögerung von 100 Millisekunden zwischen jedem Zeichen
+        fflush(stdout); // Ausgangspuffer wird geleert
+        usleep(TIME);   // Verzögerung beim Tippen (100ms)
     }
 
     printf("\nMöchtest du versuchen die Türe zu öffnen? \n");
     printf("1 - ja\n");
     printf("2 - nein\n");
+
     int decision;
     int returnValue = 0;
     int kampfStatus = 0;
+    
     scanf("%d", &decision);
 
+    // IF-Schleife ob Schlüssel bereits gefunden wurde oder nicht
     if (decision == 1)
     {
         int foundKey = 0;
