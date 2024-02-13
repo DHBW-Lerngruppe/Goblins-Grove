@@ -1,1 +1,5 @@
+GameFiles/Game
+*.exe
+*.o
 Game
+.vscode
