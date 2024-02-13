@@ -21,7 +21,7 @@ int controls()
     printf("1 - Reisen\n");
     printf("2 - Inventar öffnen\n");
     scanf("%d", &decision);
-    printf("\e[1;1H\e[2J"); // Terminal clearen!!!!!
+    printf("\e[1;1H\e[2J"); // Terminal clearen!!!!!!!!!
 
     switch (decision)
     {
