@@ -3,6 +3,8 @@
 #include <unistd.h>
 #include "hoehle.h"
 #include "gameScreens.h"
+#include "gegner.h"
+#include "kampfsystem.h"
 
 #define TIME 20000
 
@@ -16,7 +18,7 @@ int hoehle(char inv[][50])
     printf("┛┗┗┛┛┗┗┗\n");
     printf("\033[0m");
 
-    char text[] = "Als du vor der felsigen Höhlenhütte stehst und versuchst, sie zu betreten, merkst du, dass sie verschlossen ist. \n"
+    char text[] = "Als du vor der felsigen Höhle stehst und versuchst, sie zu betreten, merkst du, dass sie verschlossen ist. \n"
                   "Ein schwerer Eisengitterriegel verriegelt das Eingangstor und verwehrt dir den Zugang. \n"
                   "Die Dunkelheit der Höhle scheint durch das Gitter zu dringen und enthüllt nur vage Konturen im Inneren. \n"
                   "Ein Hauch von Geheimnis umgibt die verriegelte Höhle, und du fragst dich, welche Rätsel und Mysterien hinter den steinernen Wänden verborgen liegen. \n";
@@ -33,6 +35,7 @@ int hoehle(char inv[][50])
     printf("2 - nein\n");
     int decision;
     int returnValue = 0;
+    int kampfStatus = 0;
     scanf("%d", &decision);
 
     if (decision == 1)
@@ -50,7 +53,16 @@ int hoehle(char inv[][50])
         if (foundKey)
         {
             printf("Du öffnest die Türe\n");
-            endScreen();
+            kampfStatus = kampfsystem(gegnergruppe2, initializeGegnergruppe2());
+            
+            if (kampfStatus == 1)
+            {
+                endScreen();
+            }
+            else if (kampfStatus == 2)
+            {
+                gameover();
+            }
             returnValue = 1;
         }
         else

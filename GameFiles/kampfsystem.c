@@ -8,7 +8,7 @@
 #include <sys/time.h>
 #include <stdbool.h>
 
-int SPIELERLEBEN = 150; // 1 Gegner = 50 Spielerleben
+int SPIELERLEBEN = 200; // 1 Gegner = 50 Spielerleben
 
 int kampfsystem(struct Gegner gegnergruppe[], int groesse)
 {
