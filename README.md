@@ -64,7 +64,7 @@ Das Ziel ist die Entwicklung eines textbasierten Adventure-Spiels, das den Spiel
     
   };
 
-### Funktionen
+### wichtige Funktionen
 - menu():  Auswahl im Menu
 - gameover(): Anzeige des Endscreens
 - dorf(): Ruft den Ort "Dorf" auf
