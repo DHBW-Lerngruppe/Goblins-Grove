@@ -33,6 +33,7 @@ Das Ziel ist die Entwicklung eines textbasierten Adventure-Spiels, das den Spiel
 # Entwicklerdokumentation
 
 ## 1. Systemanforderungen
+- Ausführbar auf LINUX
 - C Compiler (GCC)
 - Standardbibliotheken: `<stdio.h>`, `<string.h>`, `<stdlib.h>`, `<sys/time.h>` ,`<stdbool.h>` ,`<unistd.h>`
 
